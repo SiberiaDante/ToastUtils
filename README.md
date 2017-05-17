@@ -2,11 +2,22 @@
  ![ToastUtls](/app/src/main/assets/ToastUtils.gif)
 
 ### 使用说明：
-* 在你的工程中
+* 第一步，在你的工程中
 ```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+```
+	dependencies {
+	        compile 'com.github.SibreiaDante:SiberiaDanteLib:v1.0.0'
+	}
 
 ```
-* 在你的项目中初始化
+* 第二部，在你的项目中初始化
 ```
 ToastApp.initToastUtils(getApplicationContext());
 ```
