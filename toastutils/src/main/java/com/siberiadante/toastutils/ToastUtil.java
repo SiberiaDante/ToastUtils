@@ -26,6 +26,15 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by SiberiaDante on 2017/5/4.
+ * 使用单例ToastUtil时注意一点：比如使用了带位置的方法后，下次再使用不带位置的单例方法时，会显示成上次方法的Toast的位置
+ * 所以强烈建议：全局统一的Toast使用该类中的单例方法，一旦使用了一种以上的方法，需要在不常使用的方法调用后调用resetToast()方法，重置Toast位置等（不适重置Toast对象）
+ * 举例：
+ * 全局一般使用的Toast是底部弹出一行简单的文字，调用：
+ * ToastUtils.toast("常规的Toast方法)；
+ * 然后我们有特殊需要，要居中显示一个Toast提示用户，调用：
+ * ToastUtil.showSingletonText("居中显示",Toast.LENGTH_SHORT,Gravity.CENTER);
+ * 这个方法调用完，其实相当于是更改了Toast的对象。不再是第一个我们常规使用的方法中所创建的，所以，
+ * 我们需要重置Toast对象，其实就是创建一个新的常规对象
  */
 
 public class ToastUtil {
@@ -411,6 +420,13 @@ public class ToastUtil {
                         ToastUtil.showImage(bitmap, Toast.LENGTH_LONG, Gravity.CENTER);
                     }
                 });
+    }
+
+    /**
+     * 重置Toast对象
+     */
+    public static void resetToast() {
+        toast = Toast.makeText(ToastApp.getContext(), "", Toast.LENGTH_LONG);
     }
 
     /**
