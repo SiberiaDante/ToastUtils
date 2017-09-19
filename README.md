@@ -5,7 +5,7 @@
 
 ```
 	dependencies {
-	        compile 'com.github.SibreiaDante:SiberiaDanteLib:v1.0.0'
+	        compile 'com.github.SiberiaDante:ToastUtils:v1.0.2'
 	}
 
 ```
@@ -45,4 +45,4 @@ ToastApp.initToastUtils(getApplicationContext());
 ## 版本更新
 * v1.0.2
     * 增加resetToast()方法：重置Toast对象,防止复用其他Toast对象
-* v1.0.1
+* 1.0.1
