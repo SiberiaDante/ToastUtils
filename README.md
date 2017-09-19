@@ -42,7 +42,6 @@ ToastApp.initToastUtils(getApplicationContext());
     * cancel():取消一个Toast，当弹出多个toast时，只会在最后一次toast被创建时取消
     * cancelAll():取消创建的所有的toast
     * resetToast()：重置Toast对象
-
 ## 版本更新
 * v1.0.2
     * 增加resetToast()方法：重置Toast对象,防止复用其他Toast对象
